@@ -18,13 +18,5 @@ jobs:
       with:
         go-version: 1.22
 
-    - name: Cache Go modules
-      uses: actions/cache@v2
-      with:
-        path: ~/go/pkg/mod
-        key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
-        restore-keys: |
-          ${{ runner.os }}-go-
-
     - name: Build the application
       run: go build -o weather main.go
