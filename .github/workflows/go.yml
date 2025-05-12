@@ -20,3 +20,8 @@ jobs:
 
     - name: Build the application
       run: go build -o weather main.go
+    
+    - name: Upload binary build
+      uses: softprops/action-gh-release@v1
+      with:
+        files: weather
