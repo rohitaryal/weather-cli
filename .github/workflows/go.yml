@@ -2,8 +2,8 @@ name: Go CI
 
 on:
   push:
-    branches:
-      - main
+    tag:
+     - 'v*'
 
 jobs:
   build:
@@ -24,4 +24,4 @@ jobs:
     - name: Upload binary build
       uses: softprops/action-gh-release@v1
       with:
-        files: weather
+        files: ./weather
